@@ -27,7 +27,12 @@ body {
   font-family: 'Google Sans', sans-serif;
 }
 
-
+.gradient-text {
+  font-weight: bold;
+  background: linear-gradient(to right, #00b3b3, #1a8cff);
+  -webkit-background-clip: text;
+  color: transparent;
+}
 .publication-title {
 }
 
@@ -80,6 +85,9 @@ body {
 
 .author-block {
   display: inline-block;
+}
+.author-row {
+  margin-bottom: 8px;
 }
 
 .publication-banner img {
@@ -155,3 +163,49 @@ body {
 #interpolation-image-wrapper img {
   border-radius: 5px;
 }
+.highlight-box {
+  background-color: rgb(253, 242, 230); /* 浅黄色背景 */
+  /* border: 2px solid #ddd; */
+  border-radius: 10px;
+  padding: 20px;
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.highlight-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align all elements to the left */
+}
+
+.highlight-icon {
+  font-size: 2em;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.highlight-title {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #333; /* Dark text color for the title */
+  margin: 10px 0;
+  text-align: center; /* Center the title */
+}
+
+.highlight-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.highlight-list li {
+  margin-bottom: 10px;
+  font-size: 1.1em;
+  line-height: 1.5;
+}
+
+.highlight-list li strong {
+  color: #333;
+}
+
+
