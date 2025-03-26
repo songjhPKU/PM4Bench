@@ -163,6 +163,17 @@ body {
 #interpolation-image-wrapper img {
   border-radius: 5px;
 }
+
+.dataset-box {
+  background-color: rgb(253, 242, 230); /* 浅黄色背景 */
+  /* border: 2px solid #ddd; */
+  border-radius: 10px;
+  padding: 20px;
+  width: 100%;
+  max-width: 1024px;
+  text-align: left;
+  margin: 20px auto;
+}
 .highlight-box {
   background-color: rgb(253, 242, 230); /* 浅黄色背景 */
   /* border: 2px solid #ddd; */
@@ -207,5 +218,137 @@ body {
 .highlight-list li strong {
   color: #333;
 }
+table.benchmark-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-family: Arial, sans-serif;
+}
+
+table.benchmark-table caption {
+  font-size: 1.1em;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+table.benchmark-table th, table.benchmark-table td {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+table.benchmark-table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+table.benchmark-table td {
+  background-color: #fff;
+}
+
+table.benchmark-table tr:nth-child(even) td {
+  background-color: #f9f9f9;
+}
+
+table.benchmark-table .highlight {
+  background-color: #fffbcc; /* Light yellow for highlight */
+}
+
+.text-red {
+  color: red;
+}
+
+sup {
+  font-size: 0.8em;
+}
+
+span.text-red {
+  font-size: 1.2em;
+}
+.image-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 20px auto;
+  max-width: 1200px; /* Max width for the container */
+}
+
+.image-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+}
+
+.image-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.image-item-small {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.image-item-dataset {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.image-item img {
+  width: 100%;  /* Make image responsive */
+  max-height: 400px;  /* Max height to ensure images are the same size */
+  object-fit: contain;  /* Make sure images are fully contained within the box, maintaining aspect ratio */
+  border-radius: 8px;
+}
+.image-item-small img {
+  width: 100%;  /* Make image responsive */
+  max-height: 340px;  /* Max height to ensure images are the same size */
+  object-fit: contain;  /* Make sure images are fully contained within the box, maintaining aspect ratio */
+  border-radius: 8px;
+}
+.image-item-dataset img {
+  width: 100%;  /* Make image responsive */
+  max-height: 550px;  /* Max height to ensure images are the same size */
+  object-fit: contain;  /* Make sure images are fully contained within the box, maintaining aspect ratio */
+  border-radius: 8px;
+}
+.image-item figcaption {
+  font-size: 1em;
+  text-align: center;
+  color: #333;
+  margin-top: 8px; /* Space between the image and caption */
+  font-style: italic;
+}
+.image-item-small figcaption {
+  font-size: 1em;
+  text-align: center;
+  color: #333;
+  margin-top: 8px; /* Space between the image and caption */
+  font-style: italic;
+}
+.image-item-dataset figcaption {
+  font-size: 1em;
+  text-align: center;
+  color: #333;
+  margin-top: 8px; /* Space between the image and caption */
+  font-style: italic;
+}
+ul.design-principles {
+  margin-left: 30px; /* Adjust indentation */
+  list-style-type: disc; /* Use black dots for list items */
+}
+
+ul.design-principles li {
+  margin-bottom: 8px; /* Optional: add spacing between list items */
+}
+
+
+
+
 
 

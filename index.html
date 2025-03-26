@@ -204,7 +204,171 @@
   </div>
 </section>
 
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Introduction -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Introduction</span></h2>
+        <div class="content has-text-justified">
+          <p>
+            Comprehensive evaluation of LVLMs in multilingual scenarios is crucial for identifying shortcomings and guiding further optimization. 
+            However, most existing benchmarks have certain limitations: <strong>(1) Some rely on language-specific corpora,</strong> coupling linguistic ability with cultural knowledge, 
+            making it difficult to discern whether performance gaps arise from cultural knowledge deficiencies or fundamental linguistic capabilities; 
+            <strong>(2) Text and images are processed separately,</strong>  unlike how humans naturally interact with multi-modal information in the real world; and 
+            <strong>(3) Safety evaluation is neglected,</strong> posing risks for responsible deployment.
+          </p>
+          <p>To address these gaps, we propose <strong><span class="gradient-text">PM<sup>4</sup>Bench</span>, the first Parallel Multilingual Multi-Modal Multi-task Benchmark for LVLMs</strong>. 
+            <span class="gradient-text">PM<sup>4</sup>Bench</span> includes 10 languages and uses parallel corpora focused on world knowledge, decoupling performance from cultural contexts. 
+            It includes the <code>vision</code> setting where text and queries are embedded in images, which align with real-world application scenarios such as multi-modal agents, 
+            free-form web interaction, and perception and self-learning of embodied AI robots. Additionally, <span class="gradient-text">PM<sup>4</sup>Bench</span> evaluates LVLM safety in multilingual and multi-modal contexts, 
+            filling a critical gap. Detailed comparison between <span class="gradient-text">PM<sup>4</sup>Bench</span> and other benchmarks are listed in <a href="#benchmark-comparison"> Benchmark Comparison </a>.</p>
+        
+          <p>Using <span class="gradient-text">PM<sup>4</sup>Bench</span>, we evaluated 11 LVLMs, including leading open-sourced LVLMs, commercial APIs, light-weight LVLMs, and recent reasoning LVLMs, 
+            revealing significant cross-linguistic performance disparities, particularly in <a href="#radar_overall"><code>vision</code> settings</a>. We found that increasing model size does not mitigate these imbalances, 
+            with Optical Character Recognition (OCR) capability identified as the key factor.</p>
+        </div>
 
+        <!-- Two pics, Benchmark + Results -->
+        <section class="image-gallery">
+          <div class="image-row">
+            <div class="image-item" id="benchmark-comparison">
+              <img src="./static/images/benchmark_comparison.png" alt="Image 1">
+              <figcaption>Benchmark Comparison.</figcaption>
+            </div>
+            
+            <div class="image-item" id="radar_overall">
+              <img src="./static/images/radar_overall.png" alt="Image 2">
+              <figcaption>Radar chart of overall vision setting performance on MDUR, MIQA, MMJB and MSOCR.</figcaption>
+            </div>
+          </div>
+        </section>
+        <!-- /Two pics, Benchmark + Results -->
+
+      </div>
+      
+    </div>
+    <!-- / Introduction -->
+    <!-- Overview of PM4Bench -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Overview of <span class="gradient-text">PM<sup>4</sup>Bench</span></h2>
+        <h3 class="title is-4">Design Principles</span></h3>
+        <div class="content has-text-justified">
+          <p>
+            Our core motivation is to comprehensively evaluate the performance of LVLMs in both usefulness and safety within multilingual &amp; 
+            multi-modal scenarios. We aim to align more closely with real-world user applications, and assess LVLMs' cross-lingual performance disparities faithfully 
+            and systematically. Furthermore, we aim to accurately analyze and identify the underlying issues and shortcomings of current LVLMs, providing clear guidance 
+            for model optimization.
+          </p>
+          
+          <p>To achieve this, we propose the following design principles:</p>
+          
+          <ul class="design-principles">
+            <li><strong>Targeted Language Selection:</strong> The selected languages should cover diverse language families, varying different writing scripts.</li>
+            <li><strong>Parallel Corpus:</strong> The content across languages must be semantically identical. This ensures that language-specific and culturally related knowledge is decoupled from the evaluation tasks, allowing us to remain focused on assessing fundamental language capabilities.</li>
+            <li><strong><code>Vision</code> Setting:</strong> To simulate real-world applications and human perception, text and queries are "printed" onto images in <code>vision</code> setting.</li>
+            <li><strong>Task Diversity:</strong> The benchmark should encompass a wide range of tasks, including perception, knowledge recall and reasoning, generation, and safety.</li>
+          </ul>   
+        </div>
+        <h3 class="title is-4">Task Introduction</span></h3>
+        <section class="image-gallery">
+          <div class="image-row">
+            <div class="image-item-small" id="basic+langs">
+              <img src="./static/images/basic+langs.png" alt="Image 1">
+              <figcaption>Above: basic statistics information of <span class="gradient-text">PM<sup>4</sup>Bench</span>.</figcaption>
+              <figcaption>Below: language Information Table. --- indicates that GraphCom does not provide specific numerical values. 
+                However, by comparing the number of characters, language families, and other aspects of the script systems, 
+                we have identified the rankings of Czech and Vietnamese in the table. </figcaption>
+            </div>
+            
+            <div class="image-item-small" id="trad_vs_vis">
+              <img src="./static/images/trad_vs_vis.png" alt="Image 2">
+              <figcaption><p>Comparison between <code>traditional</code> and <code>vision</code> setting. 
+                Under <code>vision</code> setting, the input of LVLM is a single image containing all the information needed to fulfill the task.</p>
+                Under <code>traditional</code> setting,  text content of questions and inserted images are separately given.</figcaption>
+              </figcaption>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- Four Datasets -->
+        <div class="container is-max-desktop">
+          <!-- MDUR -->
+          <div class="column is-full-width dataset-box">
+            <h2 class="title is-5"> 🔍 MDUR (Multi-Discipline Understanding and Reasoning)</h2>
+            <div class="content has-text-justified">
+              <p>
+              MDUR aims to evaluate LVLM's multi-modal understanding, knowledge application and reasoning capability. 
+              Thus, we chose <a href="https://mmmu-benchmark.github.io/">MMMU-pro</a> as our data source. MMMU-pro is a comprehensive dataset created to assess multi-modal models on college-level tasks 
+              that demand specialized knowledge and critical reasoning. MMMU-pro has 1730 samples, each of which is an English multi-choice question with only one correct option.
+              </p>
+              <p>
+              We translate the text of original English questions into the 9 other languages and generated the vision form images. 
+              It is important to note that some of the inserted images in the MDUR task contain English characters, inherited from the original MMMU-pro samples.
+               We believe that their presence has minimal impact on our <strong>"parallel"</strong> design principle.
+              </p>
+              <p>
+              Finally, we obtain the MDUR dataset covering 10 languages, with 1730 questions for each language. 
+              With MDUR task, we are able to extensively evaluate LVLM's capability to handle complicated knowledge understanding, 
+              reasoning, and application under multilingual senarios. Examples of MDUR samples can be found below (Left is <code>traditional</code> and right is <code>vision</code> setting).
+              </p>
+            </div>
+            <section class="image-gallery">
+              <div class="image-row">
+                <div class="image-item-dataset" id="MDUR_trad">
+                  <img src="./static/images/MDUR_trad.png" alt="Image 1">
+                </div>
+                
+                <div class="image-item-dataset id="MDUR_vision">
+                  <img src="./static/images/MDUR_vision.png" alt="Image 2">
+                </div>
+              </div>
+            </section>
+          </div>
+          <!-- / MDUR -->
+          <!-- MIQA -->
+          <div class="column is-full-width dataset-box">
+            <h2 class="title is-5"> 💬 MIQA (Multi-Image Question Answering)</h2>
+            <div class="content has-text-justified">
+              <p>
+              MIQA focuses on open-end question answering capabilities in multi-image input scenarios. We used <a href="https://liuziyu77.github.io/MMDU/">MMDU</a>, 
+              a multi-turn multi-image dialog understanding benchmark containing 1.6K+ rounds of QA as our source of data. 
+              We sampled 109 QA pairs from MMDU, where we prioritized choosing questions that included more image inputs. 
+              These questions and corresponding reference answers are then translated into the 9 languages. 
+              Similar to MDUR task, we also provide both <code>traditional</code> and <code>vision</code> input setting for MIQA task.
+              </p>
+              <p>
+              We translate the text of original English questions into the 9 other languages and generated the vision form images. 
+              It is important to note that some of the inserted images in the MDUR task contain English characters, inherited from the original MMMU-pro samples.
+               We believe that their presence has minimal impact on our <strong>"parallel"</strong> design principle.
+              </p>
+              <p>
+              Finally, we obtain the MDUR dataset covering 10 languages, with 1730 questions for each language. 
+              With MDUR task, we are able to extensively evaluate LVLM's capability to handle complicated knowledge understanding, 
+              reasoning, and application under multilingual senarios. Examples of MDUR samples can be found below (Left is <code>traditional</code> and right is <code>vision</code> setting).
+              </p>
+            </div>
+            <section class="image-gallery">
+              <div class="image-row">
+                <div class="image-item-dataset" id="MDUR_trad">
+                  <img src="./static/images/MDUR_trad.png" alt="Image 1">
+                </div>
+                
+                <div class="image-item-dataset id="MDUR_vision">
+                  <img src="./static/images/MDUR_vision.png" alt="Image 2">
+                </div>
+              </div>
+            </section>
+          </div>
+          <!-- / MIQA -->
+        </div>
+      </div>
+    </div>
+    <!-- / Overview of PM4Bench -->
+  </div>
+</section>
 <section class="section">
   <div class="container is-max-desktop">
 
