@@ -56,38 +56,38 @@
           <div class="is-size-5 publication-authors">
             <div class="author-raw">
               <span class="author-block">
-                <a href="https://keunhong.com">Junyuan Gao</a><sup>2*</sup>,</span>
+                <a href="https://openreview.net/profile?id=~Junyuan_Gao1">Junyuan Gao</a><sup>2*</sup>,</span>
               <span class="author-block">
                 <a href="https://jiahe-song.webflow.io">Jiahe Song</a><sup>3*</sup>,</span>
               <span class="author-block">
-                <a href="https://jonbarron.info">Jiang Wu</a><sup>1*†</sup>,
+                <a href="https://scholar.google.com/citations?user=LHiiL7AAAAAJ&hl=zh-CN">Jiang Wu</a><sup>1*†</sup>,
               </span>
             </div>
             <div class="author-raw">
               <span class="author-block">
-                <a href="https://keunhong.com">Runchuan Zhu</a><sup>3</sup>,</span>
+                <a href="https://github.com/Zrc007">Runchuan Zhu</a><sup>3</sup>,</span>
               <span class="author-block">
-                <a href="https://jiahe-song.webflow.io">Guanlin Shen</a><sup>1</sup>,</span>
+                <a href="https://www.linkedin.com/in/gary-shen-88b95b179/">Guanlin Shen</a><sup>1</sup>,</span>
               <span class="author-block">
-                <a href="https://jiahe-song.webflow.io">Shasha Wang</a><sup>1</sup>,</span>
+                Shasha Wang<sup>1</sup>,</span>
               <span class="author-block">
-                <a href="https://jiahe-song.webflow.io">Xingjian Wei</a><sup>1</sup>,</span>
+                <a href="https://www.linkedin.com/in/xingjian-wei-320458151/">Xingjian Wei</a><sup>1</sup>,</span>
               <span class="author-block">
-                <a href="https://jiahe-song.webflow.io">Haote Yang</a><sup>1</sup>,</span>
+                <a href="https://scholar.google.co.uk/citations?user=9p8R9GYAAAAJ&hl=en&newwindow=1">Haote Yang</a><sup>1</sup>,</span>
             </div>
             <div class="author-raw">
               <span class="author-block">
-                <a href="https://keunhong.com">Songyang Zhang</a><sup>1</sup>,</span>
+                <a href="https://www.zhangsongyang.com/">Songyang Zhang</a><sup>1</sup>,</span>
               <span class="author-block">
-                <a href="https://jiahe-song.webflow.io">Weijia Li</a><sup>4,1</sup>,</span>
+                <a href="https://liweijia.github.io/">Weijia Li</a><sup>4,1</sup>,</span>
               <span class="author-block">
-                <a href="https://jiahe-song.webflow.io">Bin Wang</a><sup>1</sup>,</span>
+                <a href="https://wangbindl.github.io/">Bin Wang</a><sup>1</sup>,</span>
               <span class="author-block">
-                <a href="https://jiahe-song.webflow.io">Dahua Lin</a><sup>1,5</sup>,</span>
+                <a href="http://dahua.site/">Dahua Lin</a><sup>1,5</sup>,</span>
               <span class="author-block">
-                <a href="https://jiahe-song.webflow.io">Lijun Wu</a><sup>1</sup>,</span>
+                <a href="https://apeterswu.github.io/">Lijun Wu</a><sup>1</sup>,</span>
               <span class="author-block">
-                <a href="https://jiahe-song.webflow.io">Conghui He</a><sup>1‡</sup>,</span>  
+                <a href="https://conghui.github.io/">Conghui He</a><sup>1‡</sup>,</span>  
             </div>
           </div>
 
@@ -244,9 +244,7 @@
           </div>
         </section>
         <!-- /Two pics, Benchmark + Results -->
-
       </div>
-      
     </div>
     <!-- / Introduction -->
     <!-- Overview of PM4Bench -->
@@ -291,13 +289,11 @@
             </div>
           </div>
         </section>
-
-
         <!-- Four Datasets -->
         <div class="container is-max-desktop">
           <!-- MDUR -->
           <div class="column is-full-width dataset-box">
-            <h2 class="title is-5"> 🔍 MDUR (Multi-Discipline Understanding and Reasoning)</h2>
+            <h2 class="title is-5"> 🤔 MDUR (Multi-Discipline Understanding and Reasoning)</h2>
             <div class="content has-text-justified">
               <p>
               MDUR aims to evaluate LVLM's multi-modal understanding, knowledge application and reasoning capability. 
@@ -328,193 +324,276 @@
             </section>
           </div>
           <!-- / MDUR -->
+
           <!-- MIQA -->
           <div class="column is-full-width dataset-box">
             <h2 class="title is-5"> 💬 MIQA (Multi-Image Question Answering)</h2>
             <div class="content has-text-justified">
               <p>
               MIQA focuses on open-end question answering capabilities in multi-image input scenarios. We used <a href="https://liuziyu77.github.io/MMDU/">MMDU</a>, 
-              a multi-turn multi-image dialog understanding benchmark containing 1.6K+ rounds of QA as our source of data. 
+              a multi-turn & multi-image dialog understanding benchmark containing 1.6K+ rounds of QA as our source of data. 
               We sampled 109 QA pairs from MMDU, where we prioritized choosing questions that included more image inputs. 
               These questions and corresponding reference answers are then translated into the 9 languages. 
               Similar to MDUR task, we also provide both <code>traditional</code> and <code>vision</code> input setting for MIQA task.
               </p>
               <p>
-              We translate the text of original English questions into the 9 other languages and generated the vision form images. 
-              It is important to note that some of the inserted images in the MDUR task contain English characters, inherited from the original MMMU-pro samples.
-               We believe that their presence has minimal impact on our <strong>"parallel"</strong> design principle.
+                It's worth nothing that all the questions and answers in the MIQA dataset are sourced from Wikipedia, which encompasses a wide 
+                range of general and specialized knowledge. Consequently, this necessitates that LVLM possesses not only strong visual perception 
+                and reasoning skills but also a comprehensive and robust knowledge base. Meanwhile, multi-image input also puts a challenge to model's 
+                ability to acquire, compare, and analyze information across images. MIQA adopts LLM as judge to score the open-ended answers of the LVLM from multiple dimensions.
               </p>
               <p>
-              Finally, we obtain the MDUR dataset covering 10 languages, with 1730 questions for each language. 
-              With MDUR task, we are able to extensively evaluate LVLM's capability to handle complicated knowledge understanding, 
-              reasoning, and application under multilingual senarios. Examples of MDUR samples can be found below (Left is <code>traditional</code> and right is <code>vision</code> setting).
+                We expect MIQA task to extensively evaluate LVLM's perception, understanding, knowledge application, and generation capabilities under multi-image &
+                multilingual inputs. Examples of MIQA samples can be found below (Left is <code>traditional</code> and right is <code>vision</code> setting).
               </p>
             </div>
             <section class="image-gallery">
               <div class="image-row">
-                <div class="image-item-dataset" id="MDUR_trad">
-                  <img src="./static/images/MDUR_trad.png" alt="Image 1">
+                <div class="image-item-dataset" id="MIQA_trad">
+                  <img src="./static/images/MIQA_trad.png" alt="Image 1">
                 </div>
                 
-                <div class="image-item-dataset id="MDUR_vision">
-                  <img src="./static/images/MDUR_vision.png" alt="Image 2">
+                <div class="image-item-dataset id="MIQA_vision">
+                  <img src="./static/images/MIQA_vision.png" alt="Image 2">
                 </div>
               </div>
             </section>
           </div>
           <!-- / MIQA -->
+
+          <!-- MMJB -->
+          <div class="column is-full-width dataset-box">
+            <h2 class="title is-5"> 🔐 MMJB (Multi-Modal JailBreaking Challenge)</h2>
+            <div class="content has-text-justified">
+              <p>
+                This task aims to evaluate LVLM's safety under multiodal & multilingual scenarios. 
+                We select <a href="https://safebench.github.io/">SafeBench</a> as our seed dataset, 
+                which has 500 poison instructions covering 10 safety topics. We translate these instructions into parallel corpus of 9 other languages, 
+                and then synthesize these multilingual queries into images following the SafeBench's method. 
+                We adopt LLM as judge to determine whether LVLM's response to the image is harmful. We also have a <code>traditional</code> input setting for MMJB, 
+                where only text form instructions are fed to the model. Examples of MMJB samples can be found below (Left is <code>traditional</code> and right is <code>vision</code> setting).
+              </p>
+            </div>
+            <section class="image-gallery">
+              <div class="image-row">
+                <div class="image-item-dataset" id="MMJB_trad">
+                  <img src="./static/images/MMJB_trad.png" alt="Image 1">
+                </div>
+                
+                <div class="image-item-dataset id="MMJB_vision">
+                  <img src="./static/images/MMJB_vision.png" alt="Image 2">
+                </div>
+              </div>
+            </section>
+          </div>
+          <!-- / MMJB -->
+
+          <!-- MSOCR -->
+          <div class="column is-full-width dataset-box">
+            <h2 class="title is-5"> 🧐 MSOCR (Multi-Size OCR Challenge)</h2>
+            <div class="content has-text-justified">
+              <p>
+                This task aims to evaluate LVLM's ability in recognizing words and characters of various languages. 
+                We built MSOCR dataset from scratch by randomly select a series of word entries (together with their parallel corpus) from Wikipedia, 
+                and then plot the words on a plain white canvas to form the vision input. Each image contains 20 lines of words in a specific language, 
+                and these words, when combined, have no actual meanings.
+              </p>
+              <p>
+                The font size of each line decreases from 40 to 2 from top to bottom. The LVLM is required to recognize all the text in the image from top to bottom. 
+                We then identify the line at which the model first makes a recognition error, thereby evaluating the lower limit of font size that the model can effectively recognize.
+              </p>
+              <p>
+                We constructed the 10 sets of images, each corresponding to one of the 10 languages, with each set containing 100 images. 
+                For each image, the text in its different language versions are semantically identical. This guarantees a fair comparison across linguistic contexts. 
+                In this way, we aim to provide a simple yet efficient method for assessing LVLMs' OCR performance across different languages.
+                Examples of MSOCR samples can be found below (MSOCR task only has <code>vision</code> setting).
+              </p>
+            </div>
+            <img id="MSOCR_vision" src="./static/images/MSOCR_vision.png" alt="Teaser image" style="width: 100%;"></img>
+          </div>
+          <!-- / MSOCR -->
         </div>
       </div>
     </div>
     <!-- / Overview of PM4Bench -->
-  </div>
-</section>
-<section class="section">
-  <div class="container is-max-desktop">
-
-    <div class="columns is-centered">
-
-      <!-- Visual Effects. -->
-      <div class="column">
-        <div class="content">
-          <h2 class="title is-3">Visual Effects</h2>
+    <!-- PM4Bench Construction -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3"><span class="gradient-text">PM<sup>4</sup>Bench</span> Construction</span></h2>
+        <h3 class="title is-4">Translation Pipeline</span></h3>
+        <div class="content has-text-justified">
           <p>
-            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
-            would be impossible without nerfies since it would require going through a wall.
+            In order to ensure the quality of our data, we adopt the LLM and human-expert in loop translation pipeline to acquire the parallel corpus for MDUR, MIQA and MMJB task. 
+            As shown in <a href="#translation_process">translation_process</a>, the pipeline consists of 3 stages: LLM translation, manual correction, and selection.
           </p>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/dollyzoom-stacked.mp4"
-                    type="video/mp4">
-          </video>
+          <img id="translation_process" src="./static/images/translation_process.png" alt="Teaser image" style="width: 100%;"></img>
+          <p>
+            We first utilized <code>GPT-4o-2024-08-06</code>, which is not the model being evaluated in this paper, to translate the original English 
+            corpus into the target languages. Next, we provided both the original English corpus and the translated results to two native speaker annotators, 
+            who are also proficient in English. They worked independently and refined the machine-translated results based on their expertise. 
+            This process yielded 3 versions of the translations: the original machine translation and the two refined versions. 
+            Finally, we submitted the original English text along with the 3 translation versions to <code>Claude-3.5-sonnet</code> to select the optimal translation. 
+            As a result, for the MIQA task, <strong>51%</strong> of the selected translations were refined by human experts. For the MDUR and MMJB tasks, this proportion exceeded <strong>99%</strong>.
+          </p>
         </div>
-      </div>
-      <!--/ Visual Effects. -->
-
-      <!-- Matting. -->
-      <div class="column">
-        <h2 class="title is-3">Matting</h2>
-        <div class="columns is-centered">
-          <div class="column content">
-            <p>
-              As a byproduct of our method, we can also solve the matting problem by ignoring
-              samples that fall outside of a bounding box during rendering.
-            </p>
-            <video id="matting-video" controls playsinline height="100%">
-              <source src="./static/videos/matting.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-
+        <h3 class="title is-4">Construction of <code>vision</code> setting</span></h3>
+        <div class="content has-text-justified">
+          <p>
+            When constructing <code>vision</code> setting samples, we maintained consistent layout and style across 10 language versions, with differences only in text content. 
+            This ensures that variations in cross-lingual evaluation results are primarily due to the model's language proficiency.
+          </p>
+          <p>
+            For the MDUR task, we integrate the question, options, and inserted images into a single webpage using an HTML template (adapted from MMMU-pro's open-sourced version) 
+            and save the screenshot. To increase complexity, we randomly varied text styles, such as font size, weight, style, underline and shadow.
+            For the MIQA task, we use a plain white canvas with a fixed width of 1280 pixels. Text is wrapped, and inserted images are resized and plotted using the PIL library.
+            For the MMJB task, before plotting, we wrap text lines to 15 characters for ko, zh and 25 characters for other languages. 
+            For the MSOCR task, we use a 1280*720 pixel plain white canvas, which is the commonly-used screen resolution.
+          </p>
         </div>
       </div>
     </div>
-    <!--/ Matting. -->
+    <!-- / PM4Bench Construction -->
 
-    <!-- Animation. -->
-    <div class="columns is-centered">
+    <!-- PM4Bench Evaluation -->
+    <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Animation</h2>
-
-        <!-- Interpolating. -->
-        <h3 class="title is-4">Interpolating states</h3>
+        <h2 class="title is-3"><span class="gradient-text">PM<sup>4</sup>Bench</span> Evaluation</span></h2>
+        <h3 class="title is-4">How do LVLMs perform on <span class="gradient-text">PM<sup>4</sup>Bench</span>?</span></h3>
+        <img id="overall-table" src="./static/images/overall_table.png" alt="Teaser image" style="width: 100%;"></img>
         <div class="content has-text-justified">
+          <p>For each task, each LVLM, we compute the average score <code>S<sub>avg.</sub></code> and the coefficient of variation <code>S<sub>cv.</sub></code> 
+            across scores of 10 languages. <code>S<sub>cv.</sub></code> reflects the performance variability of LVLMs across different languages, and it is calculated as:
+          <code>S<sub>cv.</sub> = (σ / μ) × 100%</code>,
+          where <code>σ</code> is the standard deviation, and <code>μ</code> is the average of scores across the 10 languages.</p>
           <p>
-            We can also animate the scene by interpolating the deformation latent codes of two input
-            frames. Use the slider here to linearly interpolate between the left frame and the right
-            frame.
+            As shown in <a href="#overall-table">table</a>, <code>Gemini-2.0-flash-thinking-exp</code> dominates both settings on MDUR and MIQA tasks, and <code>QVQ-72B</code> reaches 
+            top on MMJB's <code>traditional</code> setting. As for MSOCR, the newly proposed <code>Qwen2.5-VL-72B</code> achieves SOTA. The results above demonstrate the superior 
+            overall performance of recent reasoning models. This validates the effectiveness of reasoning architecture in multilingual and multi-modal scenarios. 
+            Further investigation shows that in certain scenarios, LVLM demonstrates notable performance disparities across different languages, 
+            as indicated by the <code>S<sub>cv.</sub></code> in <a href="#overall-table">table</a>, where the higher value reflects greater cross-lingual disparity.
           </p>
         </div>
-        <div class="columns is-vcentered interpolation-panel">
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_start.jpg"
-                 class="interpolation-image"
-                 alt="Interpolate start reference image."/>
-            <p>Start Frame</p>
-          </div>
-          <div class="column interpolation-video-column">
-            <div id="interpolation-image-wrapper">
-              Loading...
+        <h3 class="title is-4">🔍❓ Several Research Questions</span></h3>
+        <div class="highlight-box-tl">
+          <div class="highlight-content-tl">
+            <div class="left-column">
+              <h4 class="title is-5 highlight-title">🔍❓RQ1: How is the performance gap between <code>traditional</code> and <code>vision</code> setting?</span></h4>
+              <!-- 左栏内容，例如文本 -->
+              <img id="Safe_Use_final" src="./static/images/Safe_Use_final.png" alt="Teaser image" style="width: 100%;"></img>
+              <div class="content has-text-justified">
+                <p>We further divided score into 2 dimensions: the average of MDUR and MIQA represented the usefulness of the model, while the performance of MMJB represented its safety. 
+                  The above figure <a href="#Safe_Use_final">Safe_Use_final</a> visualizes the changes in performance of each model between the <code>traditional</code> and <code>vision</code> settings across the two dimensions.</p>
+                <p>
+                  It is clear that for most models, the usefulness decreases under the <code>vision</code> setting, while the safety increases. The decrease of model's usefulness may be due to model's limited ability to perceive textual content in images of <code>vision</code> setting, hindering model's capacity to obtain useful information in the MDUR and MIQA tasks. At the same time, this same limitation conversely enhanced the model's safety by inhibiting the extraction of harmful 
+                  information in the MMJB task. Our subsequent analysis of OCR capabilities further supports this hypothesis.
+                </p>
+              </div>
+              <img id="Section_4_2_2_vis_vs_std" src="./static/images/Section_4_2_2_vis_vs_std.png" alt="Teaser image" style="width: 100%;"></img>
+              <div class="content has-text-justified">
+                <p>
+                  We further examine the cross-language disparity between the <code>traditional</code> and <code>vision</code> settings.
+                  The higher <code>S<sub>cv.</sub></code> indicates the greater cross-language disparity.
+                  The results, shown in <a href="#Section_4_2_2_vis_vs_std">Variance Comparison</a>, 
+                  reveal that for MDUR, MIQA, and MMJB, the percentage of models demonstrating greater cross-language variability in the <code>vision</code> setting compared to 
+                  the <code>traditional</code> setting is <strong>82%, 100%, and 73%,</strong> respectively.
+                  This indicates that the <code>vision</code> setting not only compromises the overall performance of LVLMs but also intensifies cross-language imbalance challenges.
+                </p>
+              </div>
             </div>
-            <input class="slider is-fullwidth is-large is-info"
-                   id="interpolation-slider"
-                   step="1" min="0" max="100" value="0" type="range">
+            <div class="right-column">
+              <h4 class="title is-5 highlight-title">🔍❓RQ2: Does model size matters?</span><br></br></h4>
+              <!-- 左栏内容，例如文本 -->
+              <img id="modelsize_avg_cv" src="./static/images/modelsize_avg_cv.png" alt="Teaser image" style="width: 100%;"></img>
+              <div class="content has-text-justified">
+                <p>
+                  In recent years, scaling up model size has been widely acknowledged by both academia and industry as a crucial step toward achieving AGI. 
+                  We summarized the impact of model size on <a href="#modelsize_avg_cv">performance of MDUR</a>.
+                <p>
+                  It can be seen that in terms of overall performance (characterized by <code>S<sub>avg.</sub></code>), as the model size increases, the performance of LVLM shows an increasing trend in both <code>traditional</code> and <code>vision</code> settings. However, there is not a similarly optimistic conclusion in terms of reducing cross-language imbalance (represented by <code>S<sub>cv.</sub></code>). 
+                  Although InternVL2.5-MPO, Qwen2.5-VL and GPT-4o series models all show some degree of improvement in the <code>traditional</code> setting, as the model size increases, but in the <code>vision</code> setting, the differences between languages do not noticeably improve, and even worsen in the InternVL2.5-MPO and Qwen2.5-VL series models.
+                  Therefore, for the <code>vision</code> setting, we need to further explore the factors affecting cross-language differences, to better guide the efficient optimization of models.
+                </p>
+              </div>
+            </div>
           </div>
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_end.jpg"
-                 class="interpolation-image"
-                 alt="Interpolation end reference image."/>
-            <p class="is-bold">End Frame</p>
+        </div>
+        <div class="highlight-box-tl">
+          <div class="highlight-content-tl">
+            <div class="left-column">
+              <h4 class="title is-5">🔍❓RQ3: OCR really matters!</span></h4>
+              <img id="MDUR_regression" src="./static/images/MDUR_regression.png" alt="Teaser image" style="width: 100%;"></img>
+              <div class="content has-text-justified">
+                <p>
+                  The findings presented above collectively demonstrate that <code>vision</code> settings pose significant challenges for current LVLMs in multilingual contexts: 
+                  <strong>(1)</strong> LVLMs exhibit marked underperformance in <code>vision</code> settings compared to <code>traditional</code> settings, 
+                  <strong>(2)</strong> cross-lingual performance disparities are exacerbated in <code>vision</code> settings compared to <code>traditional</code> settings, and 
+                  <strong>(3)</strong> crucially, these limitations persist despite model scaling efforts.
+                </p>
+                <p>
+                Therefore, it is reasonable to infer that the inferior performance on <code>vision</code> setting may be because of LVLM's inadequate implicit 
+                OCR capabilities for multilingual text, which can not be adjusted by simply using larger models. 
+                </p>
+                <p>
+                  To validate this hypothesis, we additionally designed <code>OCR</code> settings for MDUR, MIQA and MMJB tasks to evaluate how well does a model recognize 
+                  the text content of <code>vision</code> setting images. We then compared and analyzed the relationship between the model's score of <code>OCR</code> setting and 
+                  <code>vision</code> settings of these 3 tasks. Preliminary visualization results are shown in <a href="#MDUR_regression">MDUR_regression</a>.
+                  Furthermore, we calculated the Pearson Correlation Coefficients (PCCs). 
+                  The statistics reveal that for the MDUR, MIQA, and MMJB tasks, the proportion of models with PCCs having an absolute value exceeding 0.5 
+                  (indicating a strong correlation) is <strong>90.91%, 72.73%, and 72.73%</strong> of all 11 models, respectively.
+                </p>
+                <p>
+                  The above results demonstrate high correlation between task performance and its OCR accuracy, indicating that OCR capability is a key factor 
+                  influencing model's performance in <code>vision</code> settings. For MDUR and MIQA, better OCR results leads to better VQA accuracy and quality.
+                   For the MMJB task, superior OCR performance enables the model to more accurately recognize and interpret harmful instructions,
+                  which in turn increases the risk of model jail-breaking. 
+                </p>
+              </div>
+            </div>
+            <div class="right-column">
+              <h4 class="title is-5">🔍❓RQ4: Do reasoning models have anything special?</span></h4>
+              <div class="content has-text-justified">
+                <p>
+                  In this section, we aim to analyze the characteristics of reasoning models in multilingual and multi-modal scenarios. 
+                  Notably, <code>Gemini-2.0-flash-thinking</code> does not provide details of its reasoning process, so our case study is limited to <code>QVQ-72B</code>.
+                </p>
+                <p>
+                  As shown in <a href="#overall-table">Overall score table</a>, in the MDUR and MIQA tasks, <code>Gemini-2.0-flash-thinking</code> achieved the highest average scores in both <code>vision</code> and <code>traditional</code> settings. <code>QVQ-72B</code> ranked second in both settings of MDUR and second and third in the <code>vision</code> and <code>traditional</code> settings of MIQA, respectively. Both models also exhibited low \cv values. This indicates that reasoning models excel in knowledge recall, knowledge reasoning, and multi-image comprehension, with relatively balanced multilingual capabilities. The case study of <code>QVQ-72B</code> revealed that its reasoning process involves a deep understanding of questions and logical deduction of answers, which likely contributes to its higher accuracy. Additionally, both models occasionally used English for reasoning in non-English tasks, which may partially mitigate cross-lingual performance disparities.
+                </p>
+                <p>
+                  In MMJB task, <code>Gemini-2.0-flash-thinking</code> did not perform well, while <code>QVQ-72B</code> outperformed all models in the <code>traditional</code> setting for zh, achieving a safety rate of 98.2. The case study revealed that when <code>QVQ-72B</code> refused to answer, it often did so without providing a reasoning process. This suggests that the model's safety performance primarily depends on its alignment efforts, and the influence of the reasoning chain remains unclear.
+                </p>
+                <p>
+                  As for MSOCR task, <code>Gemini-2.0-flash-thinking</code>-exp ranked first in this task, while <code>QVQ-72B</code> also performed well. However, our case study revealed that although <code>QVQ-72B</code> engaged in extensive reasoning before giving OCR results, its reasoning did not involve correcting OCR results but rather reminders about its own tasks. Therefore, we believe that the strong performance of the models cannot be simply attributed to their reasoning capabilities. 
+                </p>
+                <p>
+                  To summary, we found that for tasks involving knowledge application, knowledge reasoning, and analyzing logical relationships within input content, the reasoning process of reasoning models significantly enhances their performance. However, for OCR or safety related tasks, it remains uncertain whether the reasoning process of reasoning models directly contributes to task performance.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
-        <br/>
-        <!--/ Interpolating. -->
-
-        <!-- Re-rendering. -->
-        <h3 class="title is-4">Re-rendering the input video</h3>
-        <div class="content has-text-justified">
-          <p>
-            Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
-            viewpoint such as a stabilized camera by playing back the training deformations.
-          </p>
-        </div>
-        <div class="content has-text-centered">
-          <video id="replay-video"
-                 controls
-                 muted
-                 preload
-                 playsinline
-                 width="75%">
-            <source src="./static/videos/replay.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <!--/ Re-rendering. -->
-
       </div>
     </div>
-    <!--/ Animation. -->
-
-
-    <!-- Concurrent Work. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Related Links</h2>
-
-        <div class="content has-text-justified">
-          <p>
-            There's a lot of excellent work that was introduced around the same time as ours.
-          </p>
-          <p>
-            <a href="https://arxiv.org/abs/2104.09125">Progressive Encoding for Neural Optimization</a> introduces an idea similar to our windowed position encoding for coarse-to-fine optimization.
-          </p>
-          <p>
-            <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>
-            both use deformation fields to model non-rigid scenes.
-          </p>
-          <p>
-            Some works model videos with a NeRF by directly modulating the density, such as <a href="https://video-nerf.github.io/">Video-NeRF</a>, <a href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and <a href="https://neural-3d-video.github.io/">DyNeRF</a>
-          </p>
-          <p>
-            There are probably many more by the time you are reading this. Check out <a href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
-          </p>
-        </div>
-      </div>
-    </div>
-    <!--/ Concurrent Work. -->
-
+    <!-- / PM4Bench Evaluation -->
   </div>
+
 </section>
+
 
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
-}</code></pre>
+    <pre><code>@misc{gao2025pm4benchparallelmultilingualmultimodal,
+      title={PM4Bench: A Parallel Multilingual Multi-Modal Multi-task Benchmark for Large Vision Language Model}, 
+      author={Junyuan Gao and Jiahe Song and Jiang Wu and Runchuan Zhu and Guanlin Shen and Shasha Wang and Xingjian Wei and Haote Yang and Songyang Zhang and Weijia Li and Bin Wang and Dahua Lin and Lijun Wu and Conghui He},
+      year={2025},
+      eprint={2503.18484},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2503.18484}, 
+}
+</code></pre>
   </div>
 </section>
 

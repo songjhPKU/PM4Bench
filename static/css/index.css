@@ -174,6 +174,40 @@ body {
   text-align: left;
   margin: 20px auto;
 }
+.highlight-box-tl {
+  background-color: rgb(253, 242, 230); /* 浅黄色背景 */
+  border-radius: 10px;
+  padding: 20px;
+  width: 100%;
+  max-width: 1000px; /* 更宽的最大宽度 */
+  margin: 20px auto;
+}
+
+.highlight-content-tl {
+  display: flex;
+  flex-direction: row; /* 设置为水平排列（两栏） */
+  gap: 20px; /* 两栏之间的间距 */
+  align-items: flex-start; /* 左对齐 */
+}
+
+.left-column,
+.right-column {
+  flex: 1; /* 每一栏占据相等的宽度 */
+}
+
+.left-column {
+  padding-right: 10px; /* 可以给左栏添加右边距，避免内容太拥挤 */
+}
+
+.right-column {
+  padding-left: 10px; /* 给右栏添加左边距 */
+}
+.separator {
+  width: 10px; /* 设置分隔条的宽度 */
+  background-color: #ffffff; /* 分隔条的颜色 */
+  height: 100%; /* 高度和两栏一样 */
+  margin: 0 10px; /* 给分隔条添加一些水平间隔 */
+}
 .highlight-box {
   background-color: rgb(253, 242, 230); /* 浅黄色背景 */
   /* border: 2px solid #ddd; */
